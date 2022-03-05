@@ -28,11 +28,11 @@ class ViewController: UIViewController {
         
         viewColor.layer.cornerRadius = 10
         
-        for labelValue in labelValue {
+        for labelValue in labelValues {
             labelValue.text = String(format: "%.2f", slidersRGB[numberElement].value)
             numberElement += 1
         }
-        refreshRGBViews()
+        refreshRGBView()
     }
 
     @IBAction func sliderAction(_ sender: UISlider) {
