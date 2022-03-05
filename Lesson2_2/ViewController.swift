@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         
     private var numberElement = 0
     
-    private func refreshView() {
+    private func refreshRGBView() {
         viewColor.backgroundColor = UIColor(red: CGFloat(slidersRGB[0].value),
                                             green: CGFloat(slidersRGB[1].value),
                                             blue: CGFloat(slidersRGB[2].value),
@@ -28,15 +28,16 @@ class ViewController: UIViewController {
         
         viewColor.layer.cornerRadius = 10
         
-        for labelValue in labelValues {
+        for labelValue in labelValue {
             labelValue.text = String(format: "%.2f", slidersRGB[numberElement].value)
+            numberElement += 1
         }
-        refreshView()
+        refreshRGBViews()
     }
 
     @IBAction func sliderAction(_ sender: UISlider) {
         labelValues[sender.tag].text = String(format: "%.2f", sender.value)
-        refreshView()
+        refreshRGBView()
     }
 
 }
