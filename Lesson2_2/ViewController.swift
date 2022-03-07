@@ -20,24 +20,24 @@ class ViewController: UIViewController {
         viewColor.layer.cornerRadius = 10
         
         for labelValue in labelValues {
-            if let labelIndex = labelValues.firstIndex(of: labelValue) {
-                labelValue.text = String(format: "%.2f", slidersRGB[labelIndex].value)
+            if let i = labelValues.firstIndex(of: labelValue) {
+                slidersRGB[i].value = Float(Float.random(in: 0...1))
+                labelValue.text = String(format: "%.2f", slidersRGB[i].value)
             }
         }
+        refreshRGBView()
     }
 
     @IBAction func sliderAction(_ sender: UISlider) {
-//        let sliderIndex = sender.allTargets.firstIndex(of: sender)
-//        labelValues[sender].text = String(format: "%.2f", sender.value)
-//        refreshRGBView()
+        labelValues[sender.tag].text = String(format: "%.2f", sender.value)
+        refreshRGBView()
     }
     
     private func refreshRGBView() {
-//        viewColor.backgroundColor = UIColor(red: CGFloat(slidersRGB[0].value),
-//                                            green: CGFloat(slidersRGB[1].value),
-//                                            blue: CGFloat(slidersRGB[2].value),
-//                                            alpha: 1)
+        viewColor.backgroundColor = UIColor(red: CGFloat(slidersRGB[0].value),
+                                            green: CGFloat(slidersRGB[1].value),
+                                            blue: CGFloat(slidersRGB[2].value),
+                                            alpha: 1)
     }
-    
 }
 
