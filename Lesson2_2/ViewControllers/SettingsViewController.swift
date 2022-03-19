@@ -63,7 +63,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func doneButtonPressed() {
-        delegate.setNewValues(for: redSlider.value,
+        delegate.setNewColor(for: redSlider.value,
                                  green: greenSlider.value,
                                  blue: blueSlider.value)
         dismiss(animated: true)

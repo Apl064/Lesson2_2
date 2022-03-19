@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SettingsViewControllerDelegate {
-    func setNewValues(for red: Float, green: Float, blue: Float)
+    func setNewColor(for red: Float, green: Float, blue: Float)
 }
 
 class MainViewController: UIViewController {
@@ -20,9 +20,10 @@ class MainViewController: UIViewController {
         settingsVC.delegate = self
     }
 }
+
 //MARK: - SettingsViewControllerDelegate
 extension MainViewController: SettingsViewControllerDelegate {
-    func setNewValues(for red: Float, green: Float, blue: Float) {
+    func setNewColor(for red: Float, green: Float, blue: Float) {
         view.backgroundColor = UIColor(red: CGFloat(red),
                                        green: CGFloat(green),
                                        blue: CGFloat(blue),
